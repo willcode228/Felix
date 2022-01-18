@@ -1,0 +1,57 @@
+@import '../../../styles/variables';
+
+.list{
+  display: flex;
+  height: 100%;
+}
+
+.link{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  text-align: center;
+  min-width: 120px;
+  height: 100%;
+  color: $white;
+  overflow: hidden;
+
+  &:focus-within{
+    &::before,
+    &::after{
+      border-color: $white;
+    }
+  }
+
+  &:focus-within,
+  &:hover{
+    outline: none;
+    &:before{bottom: -20px;}
+    &:after{top: -20px;}
+  }
+
+  &::before,
+  &::after{
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: $orange;
+    border-radius: 50%;
+    transition: $fst-transition;
+    border: 1px solid transparent;
+  }
+
+  &::before{bottom: -40px;}
+  &::after{top: -40px; transition-delay: 0.1s;}
+}
+
+.active.link{
+  &::before,
+  &::after{
+    background: darken($orange, 20%);
+  }
+  &::before{bottom: -20px;}
+  &::after{top: -20px;}
+}
