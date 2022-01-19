@@ -14,17 +14,17 @@
   text-align: center;
   min-width: 120px;
   height: 100%;
-  color: $white;
+  color: $grey;
   overflow: hidden;
 
-  &:focus-within{
+  &:focus-visible{
     &::before,
     &::after{
       border-color: $white;
     }
   }
 
-  &:focus-within,
+  &:focus-visible,
   &:hover{
     outline: none;
     &:before{bottom: -20px;}
@@ -48,6 +48,7 @@
 }
 
 .active.link{
+  color: $white;
   &::before,
   &::after{
     background: darken($orange, 20%);

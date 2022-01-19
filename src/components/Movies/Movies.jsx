@@ -6,11 +6,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchMovies } from '../../store/Movies/actions';
 
 const Movies = () => {
-	const dispatch = useDispatch();
+	const dispatch = useDispatch(),
+		isFull = useSelector(state => state.movies.isFull);
 
 	useEffect(() => {
-		dispatch(fetchMovies());
-	},[dispatch])
+		if(!isFull) {
+			dispatch(fetchMovies());
+		}
+	},[dispatch]);
 
 	return (
 		<div className={styles.movies}>

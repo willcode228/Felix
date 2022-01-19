@@ -8,14 +8,13 @@ const FilmCard = ({movie, isBigSize}) => {
 
 	const filmCardClasses = [
 		styles.card,
-		isBigSize && styles.card__big
+		isBigSize ? styles.card__big : styles.card__small
 	].join(' ');
 
 	return (
 		<div className={filmCardClasses}>
 			<FilmCardImg isBigSize={isBigSize} path={poster_path} alt={title}/>
-
-			<FilmCardInfo movie={movie}/>
+			<FilmCardInfo isBigSize={isBigSize} movie={movie} />
 		</div>
 	);
 };

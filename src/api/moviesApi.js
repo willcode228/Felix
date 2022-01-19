@@ -7,10 +7,10 @@ const getPopularMovies = async (page=1) => {
 	return popular;
 };
 
-const getLatestMovies = async (page=1) => {
-	const latest = await rootApi.get(`movie/latest?page=${page}`);
-	return latest;
-};
+const getNowPLayingMovies = async (page=1) => {
+	const playing = await rootApi.get(`movie/now_playing?page=${page}`);
+	return playing;
+}
 
 const getTopRatedMovies = async (page=1) => {
 	const topRated = await rootApi.get(`movie/top_rated?page=${page}`);
@@ -23,15 +23,15 @@ const getUpcomingMovies = async (page=1) => {
 }
 
 const getAllMoviesTypes = async () => {
-	const [popular, latest, topRated, upcoming] = await Promise.all([
-		getPopularMovies(), getLatestMovies(), getTopRatedMovies(), getUpcomingMovies()
+	const [popular, playing, topRated, upcoming] = await Promise.all([
+		getPopularMovies(), getNowPLayingMovies(), getTopRatedMovies(), getUpcomingMovies()
 	]);
 
 	return {
-		popular: popular.data, latest: latest.data,
+		popular: popular.data, playing: playing.data,
 		topRated: topRated.data, upcoming: upcoming.data
 	}
 
 }
 
-export const moviesApi = {getPopularMovies, getLatestMovies, getTopRatedMovies, getUpcomingMovies, getAllMoviesTypes};
+export const moviesApi = {getPopularMovies, getNowPLayingMovies, getTopRatedMovies, getUpcomingMovies, getAllMoviesTypes};

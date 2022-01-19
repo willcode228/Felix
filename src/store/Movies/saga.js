@@ -1,5 +1,5 @@
 import {put, takeEvery, call} from 'redux-saga/effects';
-import { FETCH_MOVIES, setLoading, setMoviesError, setMoviesSuccess } from './actions';
+import { FETCH_MOVIES, setFullStatus, setLoading, setMoviesError, setMoviesSuccess } from './actions';
 import { moviesApi } from '../../api/moviesApi';
 
 function* fetchMoviesWorker() {
@@ -12,10 +12,12 @@ function* fetchMoviesWorker() {
 		yield put(setMoviesSuccess(allMoviesTypes));
 
 		yield put(setLoading(false));
+		yield put(setFullStatus(true));
 
 	} catch (error) {
 		yield put(setLoading(false));
-		yield put(setMoviesError({error: true, errorMessage: error || error.message}))
+		yield put(setMoviesError({error: true, errorMessage: error || error.message}));
+		yield put(setFullStatus(true));
 	}
 }
 

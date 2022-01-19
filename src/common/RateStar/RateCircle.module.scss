@@ -1,0 +1,31 @@
+@import '../../styles/variables';
+
+.rate{
+  width: 40px;
+  height: 40px;
+  position: relative;
+  &__svg {
+	min-width: 40px;
+	min-height: 40px;
+	transform: rotate(270deg);
+
+	circle {
+	  fill: transparent
+	}
+  }
+  &__fill{
+	stroke: $orange;
+	transition: all 1s cubic-bezier(0.57, 0.13, 0.18, 0.98) 0s;
+  }
+  &__bg{
+	stroke: $grey;
+  }
+  &__title{
+	font-size: 14px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	color: $white;
+	transform: translate(-50%, -50%);
+  }
+}
