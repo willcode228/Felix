@@ -1,15 +1,15 @@
 import React from 'react';
 import styles from './Sidebar.module.scss';
-import Films from '../../../common/Films/Films';
 import { useSelector } from 'react-redux';
+import BillCatalogue from '../../../common/BillСatalogue/BillСatalogue';
 
 const Sidebar = () => {
 	const upcoming = useSelector(state => state.movies.upcoming.results);
 
 	return (
 		<div className={styles.sidebar}>
-			<Films
-				movies={upcoming}
+			<BillCatalogue
+				catalogue={upcoming}
 				title='Upcoming'
 				vertical
 			/>

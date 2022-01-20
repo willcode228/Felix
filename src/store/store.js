@@ -2,12 +2,16 @@ import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import rootWatcher from './rootWatcher';
 import moviesReducer from './Movies/reducer';
+import showsReducer from './Shows/reducer';
+import actorsReducer from './Actors/reducer';
 
 
 const saga = createSagaMiddleware();
 
 const reducers = combineReducers({
-	movies: moviesReducer
+	movies: moviesReducer,
+	shows: showsReducer,
+	actors: actorsReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

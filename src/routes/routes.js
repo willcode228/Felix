@@ -1,9 +1,7 @@
 import { MOVIES, PEOPLE, TV } from './consts';
 import Movies from '../components/Movies/Movies';
-
-const DefaultComponent = (title) => {
-	return () => <h1>{title} Component For Routes</h1>;
-};
+import Shows from '../components/Shows/Shows';
+import Actors from '../components/Actors/Actors';
 
 export const publicRoutes = [
 	{
@@ -13,13 +11,13 @@ export const publicRoutes = [
 	},
 
 	{
-		Component: DefaultComponent('TV'),
+		Component: Shows,
 		path: TV,
 		key: TV
 	},
 
 	{
-		Component: DefaultComponent('People'),
+		Component: Actors,
 		path: PEOPLE,
 		key: PEOPLE
 	}

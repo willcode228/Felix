@@ -67,6 +67,10 @@
     color: $dark-text;
     text-decoration: none;
     transition: $fst-transition;
+    &:focus-visible{
+      outline-color: $dark-text;
+      outline-style: solid;
+    }
     &:hover{
       color: $orange;
       svg{fill: $orange;}

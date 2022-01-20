@@ -1,25 +1,28 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './Main.module.scss';
-import Films from '../../../common/Films/Films';
-import { moviesApi } from '../../../api/moviesApi';
+import BillCatalogue from '../../../common/BillСatalogue/BillСatalogue';
 import { useSelector } from 'react-redux';
+import BillStart from '../../../common/BillStart/BillStart';
 
 const Main = () => {
 	const {popular, playing, topRated} = useSelector(state => state.movies);
 	return (
 		<div className={styles.main}>
-			<Films
-				title="Popular Movies"
-				movies={popular.results}
+			<BillStart
+				bill={popular?.results?.[0]}
 			/>
-			<Films
+			<BillCatalogue
+				title="Popular Movies"
+				catalogue={popular.results}
+			/>
+			<BillCatalogue
 				title="Top Rated Movies"
-				movies={topRated.results}
+				catalogue={topRated.results}
 				isBigSize={false}
 			/>
-			<Films
+			<BillCatalogue
 				title="PLaying Movies"
-				movies={playing.results}
+				catalogue={playing.results}
 			/>
 		</div>);
 };

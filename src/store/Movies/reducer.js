@@ -1,10 +1,15 @@
-import { SET_FULL_STATUS, SET_MOVIES_ERROR, SET_MOVIES_LOADING, SET_MOVIES_SUCCESS } from './actions';
+import {
+	SET_MOVIES_ERROR,
+	SET_MOVIES_FULL,
+	SET_MOVIES_LOADING,
+	SET_MOVIES_SUCCESS,
+} from './actions';
 
 const initialState = {
-	popular: [],
-	playing: [],
-	topRated: [],
-	upcoming: [],
+	popular: {},
+	playing: {},
+	topRated: {},
+	upcoming: {},
 	error: false,
 	errorMessage: '',
 	loading: false,
@@ -31,7 +36,7 @@ const moviesReducer = (state=initialState, action) => {
 				...state,
 				loading: action.payload
 			}
-		case SET_FULL_STATUS:
+		case SET_MOVIES_FULL:
 			return {
 				...state,
 				isFull: action.payload

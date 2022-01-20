@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import styles from './Films.module.scss';
+import styles from './BillСatalogue.module.scss';
 import { NavLink } from 'react-router-dom';
 import { ReactComponent as ArrowIcon } from '../../assets/icons/right-arrow.svg';
-import FilmCard from '../FilmCard/FilmCard';
+import BillCard from '../BillCard/BillCard';
 
-const Films = ({title, movies = [], vertical, isBigSize = true}) => {
+const BillCatalogue = ({title, catalogue=[], vertical, isBigSize = true, linkText='All movies'}) => {
 	const [scrollRight, setScrollRight] = useState(false);
 	const [scrollLeft, setScrollLeft] = useState(true);
 
@@ -29,16 +29,16 @@ const Films = ({title, movies = [], vertical, isBigSize = true}) => {
 				<h2 className={styles.top__title}>{title}</h2>
 
 				<NavLink to="/" className={styles.top__link}>
-					All movies <ArrowIcon/>
+					{linkText} <ArrowIcon/>
 				</NavLink>
 			</div>
 
 			<div className={styles.films} onScroll={scrollHandler}>
-				{movies.map(movie => (
-					<FilmCard
+				{catalogue.map(bill => (
+					<BillCard
 						isBigSize={isBigSize}
-						key={movie.id}
-						movie={movie}
+						key={bill.id}
+						bill={bill}
 					/>
 				))}
 			</div>
@@ -47,4 +47,4 @@ const Films = ({title, movies = [], vertical, isBigSize = true}) => {
 	);
 };
 
-export default Films;
+export default BillCatalogue;

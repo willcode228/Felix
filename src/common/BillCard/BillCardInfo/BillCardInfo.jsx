@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from './FilmCardInfo.module.scss';
+import styles from './BillCardInfo.module.scss';
 import { ReactComponent as PlayIcon } from '../../../assets/icons/play.svg';
-import RateCircle from '../../RateStar/RateCircle';
+import RateCircle from '../../RateCircle/RateCircle';
 
-const FilmCardInfo = ({movie, isBigSize}) => {
-	const {title, id, vote_count, vote_average, release_date} = movie;
+const BillCardInfo = ({bill, isBigSize}) => {
+	const {title, id, vote_count, vote_average, release_date, name, first_air_date} = bill;
 
 	const infoClasses = [
 		styles.info,
@@ -20,8 +20,8 @@ const FilmCardInfo = ({movie, isBigSize}) => {
 				</div>
 
 				<div className={styles.titles}>
-					<h4 className={styles.titles__title}>{title}</h4>
-					<h5 className={styles.titles__date}>{release_date}</h5>
+					<h4 className={styles.titles__title}>{title || name}</h4>
+					<h5 className={styles.titles__date}>{release_date || first_air_date}</h5>
 				</div>
 			</div>
 
@@ -33,4 +33,4 @@ const FilmCardInfo = ({movie, isBigSize}) => {
 	);
 };
 
-export default FilmCardInfo;
+export default BillCardInfo;

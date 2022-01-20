@@ -1,4 +1,6 @@
 @import '../../../styles/variables';
+@import '../../../styles/mixins';
+
 
 .info {width: 100%;}
 .info,.container {display: flex;}
@@ -41,19 +43,9 @@
 
   .rate {
 	position: relative;
-	padding-left: 20px;
 	display: flex;
 	align-items: center;
-
-	&::before {
-	  content: '';
-	  position: absolute;
-	  left: 0;
-	  top: 0;
-	  height: 100%;
-	  width: 1px;
-	  background: linear-gradient(to bottom, transparent, rgba($white, 0.2), rgba($white, 1), rgba($white, 1), rgba($white, 1), rgba($white, 0.2), transparent);
-	}
+	@include glassBorder();
   }
 }
 
