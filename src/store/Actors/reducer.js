@@ -1,6 +1,13 @@
 import { SET_ACTORS_ERROR, SET_ACTORS_FULL, SET_ACTORS_LOADING, SET_ACTORS_SUCCESS } from './actions';
 
-const initialState = {};
+const initialState = {
+	results: [],
+	error: false,
+	errorMessage: '',
+	loading: false,
+	isFull: false,
+	page: 0
+};
 
 const actorsReducer = (state=initialState, action) => {
 	switch (action.type) {
@@ -17,7 +24,8 @@ const actorsReducer = (state=initialState, action) => {
 		case SET_ACTORS_SUCCESS:
 			return {
 				...state,
-				actors: action.payload
+				...action.payload,
+				results: [...state.results, ...action.payload.results],
 			}
 		case SET_ACTORS_ERROR:
 			return {

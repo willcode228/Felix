@@ -4,6 +4,7 @@ import rootWatcher from './rootWatcher';
 import moviesReducer from './Movies/reducer';
 import showsReducer from './Shows/reducer';
 import actorsReducer from './Actors/reducer';
+import actorInfoReducer from './ActorInfo/reducer';
 
 
 const saga = createSagaMiddleware();
@@ -11,7 +12,8 @@ const saga = createSagaMiddleware();
 const reducers = combineReducers({
 	movies: moviesReducer,
 	shows: showsReducer,
-	actors: actorsReducer
+	actors: actorsReducer,
+	actorInfo: actorInfoReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

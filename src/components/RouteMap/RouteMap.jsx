@@ -4,7 +4,8 @@ import { publicRoutes } from '../../routes/routes';
 import { MOVIES } from '../../routes/consts';
 
 const RouteMap = () => {
-	return (<div>
+	return (
+		<>
 			<Routes>
 				{publicRoutes.map(({Component, path, key}) => (
 						<Route element={<Component/>} path={path} key={key}/>
@@ -12,7 +13,8 @@ const RouteMap = () => {
 
 				<Route path='/' element={<Navigate to={MOVIES}/>}/>
 			</Routes>
-		</div>);
+		</>
+	);
 };
 
 export default RouteMap;

@@ -1,0 +1,27 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.actor{
+  width: 235px;
+  min-height: 306px;
+  border-radius: 15px;
+  overflow: hidden;
+  img{
+	width: 100%;
+	display: block;
+	object-fit: cover;
+  }
+  &__info{
+	width: 100%;
+	padding: 10px;
+	background: $light-bg;
+	color: $white;
+	margin-top: -10px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+  }
+  .known{
+	font-size: 14px;
+	@include textOverflow;
+  }
+}
