@@ -1,7 +1,8 @@
 @import '../../../styles/variables';
 
 .sidebar{
-  width: 350px;
+  min-width: 350px;
+  max-width: 350px;
   height: calc(100vh - 70px);
   overflow-y: auto;
   padding: 30px;

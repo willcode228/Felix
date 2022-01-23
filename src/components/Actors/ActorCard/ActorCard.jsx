@@ -1,6 +1,8 @@
 import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import styles from './ActorCard.module.scss';
+import { NavLink } from 'react-router-dom';
+import { PEOPLE_INFO } from '../../../routes/consts';
 
 const IMG = process.env.REACT_APP_IMG;
 
@@ -9,6 +11,9 @@ const ActorCard = ({actor}) => {
 
 	return (
 		<div className={styles.actor}>
+
+			<NavLink className={styles.info__link} to={`${PEOPLE_INFO}/${id}`} />
+
 			<LazyLoadImage
 				src={`${IMG}/w235_and_h235_face/${profile_path}`}
 				alt={name}

@@ -1,6 +1,5 @@
 import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-
 const IMG = process.env.REACT_APP_IMG;
 
 const FilmCardImg = ({isBigSize, path, alt}) => {

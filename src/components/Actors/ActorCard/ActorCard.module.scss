@@ -5,6 +5,7 @@
   width: 235px;
   min-height: 306px;
   border-radius: 15px;
+  position: relative;
   overflow: hidden;
   img{
 	width: 100%;
@@ -24,4 +25,9 @@
 	font-size: 14px;
 	@include textOverflow;
   }
+}
+
+.info__link{
+  position: absolute;
+  inset: 0;
 }

@@ -1,0 +1,89 @@
+@import '../../styles/variables';
+
+@mixin gradientShadow($deg: 0deg) {
+  background: linear-gradient($deg, rgba($app-bg, 0), rgba($app-bg, 0.1), rgba($app-bg, 0.2),
+		  rgba($app-bg, 0.3), rgba($app-bg, 0.4),  rgba($app-bg, 0.5),
+		  rgba($app-bg, 0.6), rgba($app-bg, 0.7), rgba($app-bg, 0.8),
+		  rgba($app-bg, 0.9), $app-bg);
+}
+
+.box{
+  width: 100%;
+  position: relative;
+  &::after,
+  &::before{
+	content: '';
+	display: block;
+	position: absolute;
+	top: 75px;
+	bottom: 20px;
+	width: 150px;
+	z-index: 5;
+	transition: $fst-transition;
+  }
+  &::after{
+	right: 0;
+	@include gradientShadow(90deg);
+  }
+  &::before {
+	left: 0;
+	@include gradientShadow(270deg);
+  }
+}
+
+.left.box::before{opacity: 0;}
+.right.box::after{opacity: 0;}
+
+.scroll{
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  display: flex;
+  gap: 30px;
+}
+
+.vertical{
+  &::after, &::before{display: none}
+  .scroll{
+	overflow-y: inherit;
+	overflow-x: inherit;
+	flex-wrap: wrap;
+  }
+  .top{
+	&__title{font-size: 18px;}
+	&__link{font-size: 14px;}
+  }
+}
+
+.top{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  &__title{
+	padding: 5px 0px;
+	color: $white;
+  }
+  &__link{
+	padding: 10px;
+	color: $dark-text;
+	text-decoration: none;
+	transition: $fst-transition;
+	&:focus-visible{
+	  outline-color: $dark-text;
+	  outline-style: solid;
+	}
+	&:hover{
+	  color: $orange;
+	  svg{fill: $orange;}
+	}
+	svg{
+	  display: inline;
+	  fill: $dark-text;
+	  width: 10px;
+	  height: 10px;
+	  transition: $fst-transition;
+	}
+  }
+}

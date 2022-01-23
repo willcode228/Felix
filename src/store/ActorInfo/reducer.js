@@ -16,6 +16,13 @@ const initialState = {
 		known_for_department: '',
 		birthday: '',
 		also_known_as: ''
+	},
+	credits: {
+		cast: [],
+		crew: []
+	},
+	images: {
+		profiles: []
 	}
 };
 
