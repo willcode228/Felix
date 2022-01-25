@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './BillCard.module.scss';
-import FilmCardImg from './BillCardImg/FilmCardImg';
+import FilmCardImg from './BillCardImg/BillCardImg';
 import BillCardInfo from './BillCardInfo/BillCardInfo';
 
 const BillCard = ({bill, isBigSize}) => {

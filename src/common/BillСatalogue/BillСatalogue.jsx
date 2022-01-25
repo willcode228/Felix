@@ -2,6 +2,10 @@ import React from 'react';
 import BillCard from '../BillCard/BillCard';
 import Catalogue from '../Catalogue/Catalogue';
 
+const removeDuplicateBill = (catalogue) =>
+	[...catalogue].filter((bill, index, self) => index === self.findIndex(t => t.id === bill.id));
+
+
 const BillCatalogue = ({title, catalogue=[], vertical, isBigSize = true, linkText='All movies'}) => {
 	return (
 		<Catalogue
@@ -9,7 +13,7 @@ const BillCatalogue = ({title, catalogue=[], vertical, isBigSize = true, linkTex
 			vertical={vertical}
 			linkText={linkText}
 		>
-			{catalogue.map(bill => (
+			{removeDuplicateBill(catalogue).map(bill => (
 				<BillCard
 					isBigSize={isBigSize}
 					key={bill.id}

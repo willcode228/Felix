@@ -7,6 +7,12 @@
   border-radius: 15px;
   position: relative;
   overflow: hidden;
+  z-index: 1;
+  &__link{
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+  }
   img{
 	width: 100%;
 	display: block;
@@ -27,7 +33,3 @@
   }
 }
 
-.info__link{
-  position: absolute;
-  inset: 0;
-}

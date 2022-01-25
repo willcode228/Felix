@@ -14,7 +14,7 @@ const SideActorInfo = ({actorDetails, actorCreditsAmount}) => {
 	return (
 		<div className={styles.sidebar}>
 			<LazyLoadImage
-				src={`${IMG}/w600_and_h900_bestv2/${profile_path}`}
+				src={profile_path ? `${IMG}/w600_and_h900_bestv2/${profile_path}` : ''}
 				effect='blur'
 				alt={name}
 			/>

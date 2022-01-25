@@ -4,16 +4,14 @@
   overflow: hidden;
   z-index: 1;
   &__big{
-	max-width: 350px;
+	max-width: 320px;
 	min-width: 320px;
   }
   &__small{
+	max-width: 180px;
 	min-width: 180px;
 	display: flex;
 	flex-direction: column;
-	img{
-	  height: 270px;
-	}
   }
   img{
 	display: block;

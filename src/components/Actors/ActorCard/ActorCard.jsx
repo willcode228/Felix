@@ -12,7 +12,7 @@ const ActorCard = ({actor}) => {
 	return (
 		<div className={styles.actor}>
 
-			<NavLink className={styles.info__link} to={`${PEOPLE_INFO}/${id}`} />
+			<NavLink className={styles.actor__link} to={`${PEOPLE_INFO}/${id}`} />
 
 			<LazyLoadImage
 				src={`${IMG}/w235_and_h235_face/${profile_path}`}
