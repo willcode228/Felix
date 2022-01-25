@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './BillCard.module.scss';
 import FilmCardImg from './BillCardImg/BillCardImg';
 import BillCardInfo from './BillCardInfo/BillCardInfo';
+import { NavLink } from 'react-router-dom';
+import { MOVIE_INFO } from '../../routes/consts';
 
 const BillCard = ({bill, isBigSize}) => {
 	const {poster_path, title, id} = bill;

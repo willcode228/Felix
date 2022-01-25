@@ -4,6 +4,13 @@
   width: 40px;
   height: 40px;
   position: relative;
+  &__big{
+	width: 65px;
+	height: 65px;
+	.rate__title{
+	  font-size: 20px;
+	}
+  }
   &__svg {
 	min-width: 40px;
 	min-height: 40px;

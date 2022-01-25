@@ -87,6 +87,18 @@
   position: relative;
   border-radius: 50%;
   backdrop-filter: blur(4px);
+  transition: $fst-transition;
+  &:hover{
+	svg{
+	  fill: $orange;
+	}
+  }
+
+  &__link{
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+  }
 
   svg {
 	position: absolute;
@@ -96,5 +108,6 @@
 	width: 20px;
 	height: 20px;
 	fill: $white;
+	transition: $fst-transition;
   }
 }

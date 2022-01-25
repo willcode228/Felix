@@ -5,6 +5,7 @@ import moviesReducer from './Movies/reducer';
 import showsReducer from './Shows/reducer';
 import actorsReducer from './Actors/reducer';
 import actorInfoReducer from './ActorInfo/reducer';
+import movieInfoReducer from './MovieInfo/reducer';
 
 
 const saga = createSagaMiddleware();
@@ -13,7 +14,8 @@ const reducers = combineReducers({
 	movies: moviesReducer,
 	shows: showsReducer,
 	actors: actorsReducer,
-	actorInfo: actorInfoReducer
+	actorInfo: actorInfoReducer,
+	movieInfo: movieInfoReducer,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

@@ -5,6 +5,7 @@ import {ReactComponent as EyeIcon} from '../../assets/icons/eye.svg';
 import {ReactComponent as ArrowIcon} from '../../assets/icons/right-arrow.svg';
 import { NavLink } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { MOVIE_INFO } from '../../routes/consts';
 
 
 const IMG = process.env.REACT_APP_IMG;
@@ -39,7 +40,7 @@ const BillStart = ({bill}) => {
 
 			<p className={styles.overview}>{bill?.overview}</p>
 
-			<NavLink to={'/'} className={styles.link}>
+			<NavLink to={`${MOVIE_INFO}/${bill?.id}`} className={styles.link}>
 				More info <ArrowIcon />
 			</NavLink>
 

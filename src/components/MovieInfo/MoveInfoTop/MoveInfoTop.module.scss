@@ -1,0 +1,83 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.top{
+  min-height: 100vh;
+  margin-top: 70px;
+  padding: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $white;
+  background: rgba($app-bg, .8);
+
+  &__overview{
+    margin-bottom: 20px;
+  }
+
+  &__tagline{
+    font-size: 20px;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  &__rate{
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    p{
+      font-weight: 700;
+      font-size: 20px;
+      margin-left: 15px;
+    }
+  }
+
+  &__meta{
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    &_date,
+    &_genres{
+      @include glassBorder(right, 20px);
+    }
+  }
+
+  &__production{
+    display: flex;
+    gap: 30px;
+  }
+
+  &__companie{
+    img{
+      height: 70px;
+    }
+  }
+
+  &__background{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    span, img{
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    img{
+      object-fit: cover;
+    }
+  }
+
+  &__poster{
+
+  }
+  &__info{
+    margin-left: 50px;
+    flex-grow: 1;
+  }
+}

@@ -12,6 +12,7 @@
   position: relative;
   &::after,
   &::before{
+	pointer-events: none;
 	content: '';
 	display: block;
 	position: absolute;
