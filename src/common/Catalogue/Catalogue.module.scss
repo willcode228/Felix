@@ -10,13 +10,14 @@
 .box{
   width: 100%;
   position: relative;
+  z-index: 10;
   &::after,
   &::before{
 	pointer-events: none;
 	content: '';
 	display: block;
 	position: absolute;
-	top: 75px;
+	top: 0px;
 	bottom: 20px;
 	width: 150px;
 	z-index: 5;
@@ -62,6 +63,8 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
+  position: relative;
+  z-index: 10;
   &__title{
 	padding: 5px 0px;
 	color: $white;

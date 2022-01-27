@@ -5,10 +5,6 @@ import Actors from '../components/Actors/Actors';
 import ActorInfo from '../components/ActorInfo/ActorInfo';
 import MovieInfo from '../components/MovieInfo/MovieInfo';
 
-const DefaultComponent = (title) => {
-	return () => <h1 style={{marginTop: '120px'}}>{title}</h1>
-}
-
 export const publicRoutes = [
 	{
 		Component: Movies,

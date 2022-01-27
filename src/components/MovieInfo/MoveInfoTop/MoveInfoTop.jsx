@@ -21,7 +21,7 @@ const MoveInfoTop = ({details}) => {
 
 			<LazyLoadImage
 				className={styles.top__poster}
-				src={poster_path ? `${IMG}/w300_and_h450_bestv2/${poster_path}` : ''}
+				src={poster_path ? `${IMG}/w600_and_h900_bestv2/${poster_path}` : ''}
 				effect='blur'
 				alt={title}
 			/>

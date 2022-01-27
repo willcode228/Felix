@@ -1,6 +1,4 @@
 import rootApi from './rootApi';
-import { call, put } from 'redux-saga/effects';
-import { setMoviesSuccess } from '../store/Movies/actions';
 
 const getPopularMovies = async (page=1) => {
 	const popular = await rootApi.get(`movie/popular?page=${page}`);

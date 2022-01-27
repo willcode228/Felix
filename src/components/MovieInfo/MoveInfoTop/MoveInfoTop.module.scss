@@ -2,7 +2,7 @@
 @import '../../../styles/mixins';
 
 .top{
-  min-height: 100vh;
+  min-height: calc(100vh - 70px);
   margin-top: 70px;
   padding: 30px;
   position: relative;
@@ -21,6 +21,7 @@
     font-weight: 700;
     font-style: italic;
     margin-bottom: 10px;
+    color: $grey;
   }
 
   &__rate{
@@ -47,12 +48,15 @@
 
   &__production{
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
     gap: 30px;
   }
 
   &__companie{
     img{
-      height: 70px;
+      height: 60px;
     }
   }
 
@@ -74,8 +78,9 @@
   }
 
   &__poster{
-
+    width: 350px;
   }
+
   &__info{
     margin-left: 50px;
     flex-grow: 1;

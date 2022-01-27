@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import { MOVIE_INFO } from '../../../routes/consts';
 
 const BillCardInfo = ({bill, isBigSize}) => {
-	const {title, id, vote_count, vote_average, release_date, name, first_air_date} = bill;
+	const {title, id, vote_average, release_date, name, first_air_date} = bill;
 
 	const infoClasses = [
 		styles.info,

@@ -13,7 +13,7 @@ const Movies = () => {
 		if(!isFull) {
 			dispatch(fetchMovies());
 		}
-	},[dispatch]);
+	},[dispatch, isFull]);
 
 	return (
 		<div className={styles.movies}>

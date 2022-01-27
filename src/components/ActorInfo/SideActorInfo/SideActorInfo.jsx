@@ -7,7 +7,7 @@ const IMG = process.env.REACT_APP_IMG;
 const SideActorInfo = ({actorDetails, actorCreditsAmount}) => {
 	const {profile_path, name, gender, place_of_birth, known_for_department, birthday, also_known_as} = actorDetails;
 
-	const genderWord = gender == 1 ? 'Woman' : 'Man';
+	const genderWord = gender === 1 ? 'Woman' : 'Man';
 	const known = typeof also_known_as === 'string' ? also_known_as : also_known_as.join(", ");
 	const old = new Date().getFullYear() - new Date(birthday).getFullYear();
 

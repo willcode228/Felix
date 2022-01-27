@@ -1,6 +1,5 @@
 import React from 'react';
 import { navbarPublicLinks } from '../../../routes/links';
-import { NavLink } from 'react-router-dom';
 import styles from './Navigation.module.scss';
 import Link from './Link';
 

@@ -19,12 +19,16 @@ const initialState = {
 		runtime: '',
 		production_companies: []
 	},
+	recommendations: {
+		results: []
+	},
 	credits: {
 		cast: [],
 		crew: []
 	},
 	images: {
-		profiles: []
+		backdrops: [],
+		posters: []
 	}
 };
 

@@ -9,12 +9,12 @@ import MainActorInfo from './MainActorInfo/MainActorInfo';
 
 const ActorInfo = () => {
 	const dispatch = useDispatch();
-	const {details, credits, links, images} = useSelector(state => state.actorInfo);
+	const {details, credits, images} = useSelector(state => state.actorInfo);
 	const {params: {actorId}} = useMatch(`${PEOPLE_INFO}/:actorId`);
 
 	useEffect(() => {
 		dispatch(fetchActorInfo(actorId));
-	}, []);
+	}, [dispatch, actorId]);
 
 	return (
 		<div className={styles.actorInfo}>

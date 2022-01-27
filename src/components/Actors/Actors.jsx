@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchActors } from '../../store/Actors/actions';
 import styles from './Actors.module.scss';
-import ActorCard from './ActorCard/ActorCard';
+import ActorCard from '../../common/ActorCard/ActorCard';
 import InfiniteBox from '../../common/InfiniteBox/InfiniteBox';
 
 const Actors = () => {
@@ -13,7 +13,7 @@ const Actors = () => {
 		if (!isFull) {
 			dispatch(fetchActors());
 		}
-	}, [dispatch]);
+	}, [dispatch, isFull]);
 
 	return (
 		<InfiniteBox

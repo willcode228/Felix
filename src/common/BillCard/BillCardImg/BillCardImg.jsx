@@ -8,10 +8,6 @@ const IMG = process.env.REACT_APP_IMG;
 const FilmCardImg = ({isBigSize, path, alt}) => {
 	const imgSize = isBigSize ? 'w355_and_h200_multi_faces' : 'w220_and_h330_face';
 
-	const errorClasses = [
-		styles.error, isBigSize && styles.big
-	]
-
 	if(!path) {
 		return (
 			<div className={styles.error}>

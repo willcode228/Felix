@@ -13,7 +13,7 @@ const Shows = () => {
 		if(!isFull) {
 			dispatch(fetchShows());
 		}
-	}, [dispatch])
+	}, [dispatch, isFull])
 
 	return (
 		<div className={styles.shows}>
