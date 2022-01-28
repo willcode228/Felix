@@ -17,7 +17,8 @@ const initialState = {
 		genres: [],
 		tagline: '',
 		runtime: '',
-		production_companies: []
+		production_companies: [],
+		belongs_to_collection: null
 	},
 	recommendations: {
 		results: []

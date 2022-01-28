@@ -9,6 +9,7 @@ import ActorCard from '../../common/ActorCard/ActorCard';
 import styles from './MovieInfo.module.scss';
 import BillCatalogue from '../../common/BillСatalogue/BillСatalogue';
 import MovieInfoImages from './MovieInfoImages/MovieInfoImages';
+import MovieInfoCollection from './MovieInfoCollection/MovieInfoCollection';
 
 const MovieInfo = () => {
 	const dispatch = useDispatch();
@@ -30,6 +31,8 @@ const MovieInfo = () => {
 				</Catalogue>
 
 				<MovieInfoImages images={images}/>
+
+				<MovieInfoCollection collection={details.belongs_to_collection}/>
 
 				<BillCatalogue title='Recommendations' catalogue={recommendations.results}/>
 			</div>
