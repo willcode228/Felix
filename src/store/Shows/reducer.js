@@ -1,11 +1,9 @@
-import { SET_SHOWS_ERROR, SET_SHOWS_FULL, SET_SHOWS_LOADING, SET_SHOWS_SUCCESS } from './actions';
+import { SET_SHOWS_FULL, SET_SHOWS_LOADING, SET_SHOWS_SUCCESS } from './actions';
 
 const initialState = {
 	popular: {},
 	topRated: {},
 	onAir: {},
-	error: false,
-	errorMessage: '',
 	loading: false,
 	isFull: false
 };
@@ -26,12 +24,6 @@ const showsReducer = (state = initialState, action) => {
 			return {
 				...state,
 				...action.payload
-			};
-		case SET_SHOWS_ERROR:
-			return {
-				...state,
-				error: action.payload.error,
-				errorMessage: action.payload.errorMessage
 			};
 		default:
 			return state;

@@ -1,16 +1,16 @@
 import {put, takeEvery, call} from 'redux-saga/effects';
 import {
 	FETCH_MOVIES,
-	setMoviesError,
 	setMoviesFull,
 	setMoviesLoading,
 	setMoviesSuccess
 } from './actions';
 import { moviesApi } from '../../api/moviesApi';
+import { setErrorPage } from '../ErrorPage/actions';
 
 function* fetchMoviesWorker() {
 	try {
-		yield put(setMoviesError({error: false, errorMessage: ''}))
+		yield put(setErrorPage())
 
 		yield put(setMoviesLoading(true));
 
@@ -22,7 +22,7 @@ function* fetchMoviesWorker() {
 
 	} catch (error) {
 		yield put(setMoviesLoading(false));
-		yield put(setMoviesError({error: true, errorMessage: error || error.message}));
+		yield put(setErrorPage(error));
 		yield put(setMoviesFull(false));
 	}
 }

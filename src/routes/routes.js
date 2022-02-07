@@ -1,9 +1,11 @@
-import { MOVIE_INFO, MOVIES, PEOPLE, PEOPLE_INFO, TV } from './consts';
+import { COLLECTION, MOVIE_INFO, MOVIES, PEOPLE, PEOPLE_INFO, SHOW, SHOW_INFO } from './consts';
 import Movies from '../components/Movies/Movies';
 import Shows from '../components/Shows/Shows';
 import Actors from '../components/Actors/Actors';
 import ActorInfo from '../components/ActorInfo/ActorInfo';
 import MovieInfo from '../components/MovieInfo/MovieInfo';
+import Collection from '../components/Collection/Collection';
+import ShowInfo from '../components/ShowInfo/ShowInfo';
 
 export const publicRoutes = [
 	{
@@ -14,8 +16,8 @@ export const publicRoutes = [
 
 	{
 		Component: Shows,
-		path: TV,
-		key: TV
+		path: SHOW,
+		key: SHOW
 	},
 
 	{
@@ -34,5 +36,17 @@ export const publicRoutes = [
 		Component: MovieInfo,
 		path: `${MOVIE_INFO}/:movieId`,
 		key: `${MOVIE_INFO}/:movieId`
+	},
+
+	{
+		Component: ShowInfo,
+		path: `${SHOW_INFO}/:showId`,
+		key: `${SHOW_INFO}/:showId`
+	},
+
+	{
+		Component: Collection,
+		path: `${COLLECTION}/:collectionId`,
+		key: `${COLLECTION}/:collectionId`
 	}
 ]

@@ -1,6 +1,6 @@
 import {
-	SET_MOVIE_INFO_LOADING,
-	SET_MOVIE_INFO_SUCCESS,
+	SET_SHOW_INFO_LOADING,
+	SET_SHOW_INFO_SUCCESS,
 } from './actions';
 
 const initialState = {
@@ -30,14 +30,14 @@ const initialState = {
 	}
 };
 
-const movieInfoReducer = (state=initialState, action) => {
+const showInfoReducer = (state=initialState, action) => {
 	switch (action.type) {
-		case SET_MOVIE_INFO_LOADING:
+		case SET_SHOW_INFO_LOADING:
 			return {
 				...state,
 				loading: action.payload
 			}
-		case SET_MOVIE_INFO_SUCCESS:
+		case SET_SHOW_INFO_SUCCESS:
 			return {
 				...state,
 				...action.payload,
@@ -47,4 +47,4 @@ const movieInfoReducer = (state=initialState, action) => {
 	}
 }
 
-export default movieInfoReducer;
+export default showInfoReducer;

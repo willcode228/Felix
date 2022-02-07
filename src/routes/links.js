@@ -1,4 +1,4 @@
-import { MOVIES, PEOPLE, TV } from './consts';
+import { MOVIES, PEOPLE, SHOW } from './consts';
 
 export const navbarPublicLinks = [
 	{
@@ -8,7 +8,7 @@ export const navbarPublicLinks = [
 
 	{
 		title: 'TV shows',
-		path: TV,
+		path: SHOW,
 	},
 
 	{

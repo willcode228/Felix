@@ -1,12 +1,9 @@
 import {
-	SET_ACTOR_INFO_ERROR,
 	SET_ACTOR_INFO_LOADING,
 	SET_ACTOR_INFO_SUCCESS,
 } from './actions';
 
 const initialState = {
-	error: false,
-	errorMessage: '',
 	loading: false,
 	details: {
 		profile_path: '',
@@ -37,12 +34,6 @@ const actorInfoReducer = (state=initialState, action) => {
 			return {
 				...state,
 				...action.payload,
-			}
-		case SET_ACTOR_INFO_ERROR:
-			return {
-				...state,
-				error: action.payload.error,
-				errorMessage: action.payload.errorMessage
 			}
 		default:
 			return state

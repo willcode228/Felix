@@ -1,5 +1,4 @@
 import {
-	SET_MOVIES_ERROR,
 	SET_MOVIES_FULL,
 	SET_MOVIES_LOADING,
 	SET_MOVIES_SUCCESS,
@@ -10,8 +9,6 @@ const initialState = {
 	playing: {},
 	topRated: {},
 	upcoming: {},
-	error: false,
-	errorMessage: '',
 	loading: false,
 	isFull: false
 }
@@ -23,14 +20,6 @@ const moviesReducer = (state=initialState, action) => {
 				...state,
 				...action.payload
 			}
-
-		case SET_MOVIES_ERROR:
-			return {
-				...state,
-				error: action.payload.error,
-				errorMessage: action.payload.errorMessage
-			}
-
 		case SET_MOVIES_LOADING:
 			return {
 				...state,

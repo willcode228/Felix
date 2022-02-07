@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './MoveInfoTop.module.scss';
+import styles from './MovieInfoTop.module.scss';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 const IMG = process.env.REACT_APP_IMG;
 
-const MoveInfoCompanies = ({companies}) => {
+const MovieInfoCompanies = ({companies}) => {
 	return (
 		<div className={styles.top__production}>
 			{companies.map(companie => {
@@ -24,4 +24,4 @@ const MoveInfoCompanies = ({companies}) => {
 	);
 };
 
-export default MoveInfoCompanies;
+export default MovieInfoCompanies;

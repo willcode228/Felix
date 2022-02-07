@@ -4,26 +4,21 @@ import RateCircle from '../RateCircle/RateCircle';
 import {ReactComponent as EyeIcon} from '../../assets/icons/eye.svg';
 import {ReactComponent as ArrowIcon} from '../../assets/icons/right-arrow.svg';
 import { NavLink } from 'react-router-dom';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { MOVIE_INFO } from '../../routes/consts';
-
+import { MOVIE_INFO, SHOW_INFO } from '../../routes/consts';
+import numbersFormat from '../../utils/numbersFormat';
+import BillBackdrop from '../BillBackdrop/BillBackdrop';
 
 const IMG = process.env.REACT_APP_IMG;
-
 
 const BillStart = ({bill}) => {
 
 	const date = bill?.release_date || bill?.first_air_date;
+	const linkInfoPath = bill?.title ? MOVIE_INFO : SHOW_INFO;
 
 	return (
 		<div className={styles.box}>
 
-			<LazyLoadImage
-				className={styles.background}
-				src={bill?.backdrop_path ? `${IMG}/original/${bill.backdrop_path}` : ''}
-				alt={bill?.title}
-				effect='blur'
-			/>
+			<BillBackdrop backdrop={bill?.backdrop_path} />
 
 			<h2 className={styles.title}>{bill?.title || bill?.name}</h2>
 
@@ -33,14 +28,14 @@ const BillStart = ({bill}) => {
 
 				<h3 className={styles.popularity}>
 					<EyeIcon className={styles.eye}/>
-					{Math.round(bill?.popularity)}
+					{numbersFormat(Math.round(bill?.popularity))}
 				</h3>
 
 			</div>
 
 			<p className={styles.overview}>{bill?.overview}</p>
 
-			<NavLink to={`${MOVIE_INFO}/${bill?.id}`} className={styles.link}>
+			<NavLink to={`${linkInfoPath}/${bill?.id}`} className={styles.link}>
 				More info <ArrowIcon />
 			</NavLink>
 

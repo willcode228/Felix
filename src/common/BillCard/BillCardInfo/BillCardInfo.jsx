@@ -3,10 +3,11 @@ import styles from './BillCardInfo.module.scss';
 import { ReactComponent as PlayIcon } from '../../../assets/icons/play.svg';
 import RateCircle from '../../RateCircle/RateCircle';
 import { NavLink } from 'react-router-dom';
-import { MOVIE_INFO } from '../../../routes/consts';
+import { MOVIE_INFO, SHOW_INFO } from '../../../routes/consts';
 
 const BillCardInfo = ({bill, isBigSize}) => {
 	const {title, id, vote_average, release_date, name, first_air_date} = bill;
+	const linkInfoPath = title ? MOVIE_INFO : SHOW_INFO;
 
 	const infoClasses = [
 		styles.info,
@@ -19,7 +20,7 @@ const BillCardInfo = ({bill, isBigSize}) => {
 			<div className={styles.container}>
 
 				<div className={`${styles.play} play`}>
-					<NavLink className={styles.play__link} to={`${MOVIE_INFO}/${id}`} />
+					<NavLink className={styles.play__link} to={`${linkInfoPath}/${id}`} />
 					<PlayIcon/>
 				</div>
 

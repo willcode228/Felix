@@ -1,23 +1,19 @@
 import React from 'react';
-import styles from './MoveInfoTop.module.scss';
+import styles from './MovieInfoTop.module.scss';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import RateCircle from '../../../common/RateCircle/RateCircle';
-import MoveInfoCompanies from './MoveInfoCompanies';
+import MovieInfoCompanies from './MovieInfoCompanies';
+import BillBackdrop from '../../../common/BillBackdrop/BillBackdrop';
 const IMG = process.env.REACT_APP_IMG;
 
-const MoveInfoTop = ({details}) => {
+const MovieInfoTop = ({details}) => {
 	const {poster_path, backdrop_path, title, release_date, genres, runtime, vote_average, tagline, overview, production_companies} = details;
 
+	// const
 	return (
 		<div className={styles.top}>
 
-			<div className={styles.top__background}>
-				<LazyLoadImage
-					src={backdrop_path ? `${IMG}/original/${backdrop_path}` : ''}
-					effect='blur'
-					alt=''
-				/>
-			</div>
+			<BillBackdrop backdrop={backdrop_path} />
 
 			<LazyLoadImage
 				className={styles.top__poster}
@@ -41,14 +37,14 @@ const MoveInfoTop = ({details}) => {
 					<p>User<br/>score</p>
 				</div>
 
-				<p className={styles.top__tagline}>"{tagline}"</p>
+				<p className={styles.top__tagline}>{tagline}</p>
 
 				<div className={styles.top__overview}>
 					<h3>Overviews</h3>
 					<p>{overview}</p>
 				</div>
 
-				<MoveInfoCompanies companies={production_companies}/>
+				<MovieInfoCompanies companies={production_companies}/>
 
 			</div>
 
@@ -56,4 +52,4 @@ const MoveInfoTop = ({details}) => {
 	);
 };
 
-export default MoveInfoTop;
+export default MovieInfoTop;

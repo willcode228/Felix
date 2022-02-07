@@ -1,11 +1,12 @@
 import { call, put, takeEvery, select } from 'redux-saga/effects';
-import { FETCH_ACTORS, setActorsError, setActorsFull, setActorsLoading, setActorsSuccess } from './actions';
+import { FETCH_ACTORS, setActorsFull, setActorsLoading, setActorsSuccess } from './actions';
 import { actorsApi } from '../../api/actorsApi';
+import { setErrorPage } from '../ErrorPage/actions';
 
 function* fetchActorsWorker() {
 	try {
 
-		yield put(setActorsError({error: false, errorMessage: ''}));
+		yield put(setErrorPage());
 		yield put(setActorsLoading(true));
 
 		const page = yield select(state => state.actors.page);
@@ -18,7 +19,7 @@ function* fetchActorsWorker() {
 	} catch (error) {
 
 		yield put(setActorsLoading(false));
-		yield put(setActorsError({error: true, errorMessage: error || error.message}));
+		yield put(setErrorPage(error));
 		yield put(setActorsFull(false));
 
 	}

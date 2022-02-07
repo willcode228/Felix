@@ -4,6 +4,9 @@ import { showsWatcher } from './Shows/saga';
 import { actorsWatcher } from './Actors/saga';
 import { actorInfoWatcher } from './ActorInfo/saga';
 import { movieInfoWatcher } from './MovieInfo/saga';
+import { collectionWatcher } from './Collection/saga';
+import { errorPageWatcher } from './ErrorPage/saga';
+import { showInfoWatcher } from './ShowInfo/saga';
 
 function* rootWatcher() {
 	yield all([
@@ -11,7 +14,10 @@ function* rootWatcher() {
 		showsWatcher(),
 		actorsWatcher(),
 		actorInfoWatcher(),
-		movieInfoWatcher()
+		movieInfoWatcher(),
+		showInfoWatcher(),
+		collectionWatcher(),
+		errorPageWatcher()
 	]);
 }
 

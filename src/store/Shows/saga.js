@@ -1,12 +1,13 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import { showsApi } from '../../api/showsApi';
-import { FETCH_SHOWS, setShowsError, setShowsFull, setShowsLoading, setShowsSuccess } from './actions';
+import { FETCH_SHOWS, setShowsFull, setShowsLoading, setShowsSuccess } from './actions';
+import { setErrorPage } from '../ErrorPage/actions';
 
 function* fetchShowsWorker() {
 	try {
 
 		yield put(setShowsFull(false));
-		yield put(setShowsError({error: false, errorMessage: ''}));
+		yield put(setErrorPage());
 		yield put(setShowsLoading(true));
 
 		const allShowsTypes = yield call(showsApi.getAllShowsTypes);
@@ -18,7 +19,7 @@ function* fetchShowsWorker() {
 	} catch (error) {
 
 		yield put(setShowsLoading(false));
-		yield put(setShowsError({error: true, errorMessage: error || error.message}));
+		yield put(setErrorPage(error));
 		yield put(setShowsFull(false));
 
 	}
