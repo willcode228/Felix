@@ -2,10 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './MovieInfoCollection.module.scss';
 import { COLLECTION } from '../../../routes/consts';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import BillBackdrop from '../../../common/BillBackdrop/BillBackdrop';
-
-const IMG = process.env.REACT_APP_IMG;
+import BillBackdrop from '../../../common/BillsBlocks/BillBackdrop/BillBackdrop';
 
 const MovieInfoCollection = ({collection}) => {
 

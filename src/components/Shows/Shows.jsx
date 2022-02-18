@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import BillStart from '../../common/BillStart/BillStart';
+import BillStart from '../../common/BillsBlocks/BillStart/BillStart';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchShows } from '../../store/Shows/actions';
 import styles from './Shows.module.scss';
-import BillCatalogue from '../../common/BillСatalogue/BillСatalogue';
+import BillCatalogue from '../../common/BillsBlocks/BillСatalogue/BillСatalogue';
 
 const Shows = () => {
 	const dispatch = useDispatch();

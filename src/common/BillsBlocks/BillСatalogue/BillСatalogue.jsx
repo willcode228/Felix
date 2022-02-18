@@ -1,7 +1,7 @@
 import React from 'react';
 import BillCard from '../BillCard/BillCard';
-import Catalogue from '../Catalogue/Catalogue';
-import { removeDuplicate } from '../../utils/removeDuplicates';
+import Catalogue from '../../Catalogue/Catalogue';
+import { removeDuplicate } from '../../../utils/removeDuplicates';
 
 const BillCatalogue = ({title, catalogue=[], vertical, isBigSize = true, linkText='All movies'}) => {
 	return (

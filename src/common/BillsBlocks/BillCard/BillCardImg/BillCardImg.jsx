@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './BillCardImg.module.scss';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import {ReactComponent as NotFoundImageIcon} from '../../../assets/icons/image-not-found.svg';
+import {ReactComponent as NotFoundImageIcon} from '../../../../assets/icons/image-not-found.svg';
 
 const IMG = process.env.REACT_APP_IMG;
 
@@ -19,6 +19,7 @@ const FilmCardImg = ({isBigSize, path, alt}) => {
 	return (
 		<LazyLoadImage
 			src={`${IMG}/${imgSize}/${path}`}
+			placeholder={<NotFoundImageIcon />}
 			effect='blur'
 			alt={alt}
 		/>

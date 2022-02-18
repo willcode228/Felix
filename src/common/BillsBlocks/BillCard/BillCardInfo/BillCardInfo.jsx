@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './BillCardInfo.module.scss';
-import { ReactComponent as PlayIcon } from '../../../assets/icons/play.svg';
-import RateCircle from '../../RateCircle/RateCircle';
+import { ReactComponent as PlayIcon } from '../../../../assets/icons/play.svg';
+import RateCircle from '../../../RateCircle/RateCircle';
 import { NavLink } from 'react-router-dom';
-import { MOVIE_INFO, SHOW_INFO } from '../../../routes/consts';
+import { MOVIE_INFO, SHOW_INFO } from '../../../../routes/consts';
 
 const BillCardInfo = ({bill, isBigSize}) => {
 	const {title, id, vote_average, release_date, name, first_air_date} = bill;

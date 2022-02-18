@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './BillStart.module.scss';
-import RateCircle from '../RateCircle/RateCircle';
-import {ReactComponent as EyeIcon} from '../../assets/icons/eye.svg';
-import {ReactComponent as ArrowIcon} from '../../assets/icons/right-arrow.svg';
+import RateCircle from '../../RateCircle/RateCircle';
+import {ReactComponent as EyeIcon} from '../../../assets/icons/eye.svg';
+import {ReactComponent as ArrowIcon} from '../../../assets/icons/right-arrow.svg';
 import { NavLink } from 'react-router-dom';
-import { MOVIE_INFO, SHOW_INFO } from '../../routes/consts';
-import numbersFormat from '../../utils/numbersFormat';
+import { MOVIE_INFO, SHOW_INFO } from '../../../routes/consts';
+import numbersFormat from '../../../utils/numbersFormat';
 import BillBackdrop from '../BillBackdrop/BillBackdrop';
 
 const IMG = process.env.REACT_APP_IMG;

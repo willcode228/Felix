@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './CollectionTop.module.scss';
-import BillBackdrop from '../../../common/BillBackdrop/BillBackdrop';
+import BillBackdrop from '../../../common/BillsBlocks/BillBackdrop/BillBackdrop';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import RateCircle from '../../../common/RateCircle/RateCircle';
 

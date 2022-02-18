@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCollection } from '../../store/Collection/actions';
 import CollectionTop from './CollectionTop/CollectionTop';
 import styles from './Collection.module.scss';
-import BillCatalogue from '../../common/BillСatalogue/BillСatalogue';
-import BillImages from '../../common/BillImages/BillImages';
+import BillCatalogue from '../../common/BillsBlocks/BillСatalogue/BillСatalogue';
+import BillImages from '../../common/BillsBlocks/BillImages/BillImages';
 
 const Collection = () => {
 	const dispatch = useDispatch();

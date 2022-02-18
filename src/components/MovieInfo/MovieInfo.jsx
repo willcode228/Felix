@@ -3,13 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchMovieInfo } from '../../store/MovieInfo/actions';
 import { useMatch } from 'react-router';
 import { MOVIE_INFO } from '../../routes/consts';
-import MovieInfoTop from './MovieInfoTop/MovieInfoTop';
 import Catalogue from '../../common/Catalogue/Catalogue';
 import ActorCard from '../../common/ActorCard/ActorCard';
 import styles from './MovieInfo.module.scss';
-import BillCatalogue from '../../common/BillСatalogue/BillСatalogue';
+import BillCatalogue from '../../common/BillsBlocks/BillСatalogue/BillСatalogue';
 import MovieInfoCollection from './MovieInfoCollection/MovieInfoCollection';
-import BillImages from '../../common/BillImages/BillImages';
+import BillImages from '../../common/BillsBlocks/BillImages/BillImages';
+import BillInfoTop from '../../common/BillsBlocks/BillInfoTop/BillInfoTop';
 
 const MovieInfo = () => {
 	const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const MovieInfo = () => {
 
 	return (
 		<div>
-			<MovieInfoTop details={details}/>
+			<BillInfoTop details={details}/>
 
 			<div className={styles.wrapper}>
 				<Catalogue title="Top Billed Cast">

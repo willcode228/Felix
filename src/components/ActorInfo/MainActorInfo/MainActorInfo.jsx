@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './MainActorInfo.module.scss';
-import BillCatalogue from '../../../common/BillСatalogue/BillСatalogue';
+import BillCatalogue from '../../../common/BillsBlocks/BillСatalogue/BillСatalogue';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Catalogue from '../../../common/Catalogue/Catalogue';
 const IMG = process.env.REACT_APP_IMG;

@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './Main.module.scss';
-import BillCatalogue from '../../../common/BillСatalogue/BillСatalogue';
+import BillCatalogue from '../../../common/BillsBlocks/BillСatalogue/BillСatalogue';
 import { useSelector } from 'react-redux';
-import BillStart from '../../../common/BillStart/BillStart';
+import BillStart from '../../../common/BillsBlocks/BillStart/BillStart';
 
 const Main = () => {
 	const {popular, playing, topRated} = useSelector(state => state.movies);

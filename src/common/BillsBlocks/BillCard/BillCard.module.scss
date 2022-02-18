@@ -6,10 +6,12 @@
   &__big{
 	max-width: 320px;
 	min-width: 320px;
+	min-height: 180px;
   }
   &__small{
 	max-width: 180px;
 	min-width: 180px;
+	min-height: 390px;
 	display: flex;
 	flex-direction: column;
   }

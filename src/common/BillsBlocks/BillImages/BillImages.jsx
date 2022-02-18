@@ -1,8 +1,8 @@
 import React from 'react';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import styles from './BillImages.module.scss';
-import Catalogue from '../Catalogue/Catalogue';
-import { removeDuplicate } from '../../utils/removeDuplicates';
+import Catalogue from '../../Catalogue/Catalogue';
+import { removeDuplicate } from '../../../utils/removeDuplicates';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 const IMG = process.env.REACT_APP_IMG;
 
