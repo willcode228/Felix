@@ -7,6 +7,9 @@ import { movieInfoWatcher } from './MovieInfo/saga';
 import { collectionWatcher } from './Collection/saga';
 import { errorPageWatcher } from './ErrorPage/saga';
 import { showInfoWatcher } from './ShowInfo/saga';
+import { searchWatcher } from './Search/saga';
+import { discoverWatcher } from './Discover/saga';
+import { loadingWatcher } from './Loading/saga';
 
 function* rootWatcher() {
 	yield all([
@@ -17,7 +20,10 @@ function* rootWatcher() {
 		movieInfoWatcher(),
 		showInfoWatcher(),
 		collectionWatcher(),
-		errorPageWatcher()
+		errorPageWatcher(),
+		searchWatcher(),
+		discoverWatcher(),
+		loadingWatcher()
 	]);
 }
 

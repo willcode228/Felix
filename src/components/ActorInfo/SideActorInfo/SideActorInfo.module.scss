@@ -19,4 +19,12 @@
   &__title{
     color: $white;
   }
+
+  @media (max-width: 768px) {
+    min-width: 100%;
+    max-width: 100%;
+    border-bottom: 1px solid $brown-border;
+    overflow-y: unset;
+    height: unset;
+  }
 }

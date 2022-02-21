@@ -1,21 +1,22 @@
 import { takeEvery, put, call } from 'redux-saga/effects';
-import { FETCH_ACTOR_INFO, setActorInfoLoading, setActorInfoSuccess } from './actions';
+import { FETCH_ACTOR_INFO, setActorInfoSuccess } from './actions';
 import { actorInfoApi } from '../../api/actorInfoApi';
 import { setErrorPage } from '../ErrorPage/actions';
+import { setLoading } from '../Loading/actions';
 
 function* fetchActorInfoWorker(actorId) {
 	try {
 		yield put(setErrorPage());
-		yield put(setActorInfoLoading(true));
+		yield put(setLoading(true));
 
 		const actorInfo = yield call(actorInfoApi.getActorAllInfo, actorId.payload);
 		yield put(setActorInfoSuccess(actorInfo));
 
-		yield put(setActorInfoLoading(false));
+		yield put(setLoading(false));
 
 	} catch (error) {
 		yield put(setErrorPage(error));
-		yield put(setActorInfoLoading(false));
+		yield put(setLoading(false));
 	}
 }
 

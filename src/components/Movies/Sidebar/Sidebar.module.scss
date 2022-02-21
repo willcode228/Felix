@@ -6,4 +6,8 @@
   padding: 30px;
   overflow-y: scroll;
   border-right: 1px solid $brown-border;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }

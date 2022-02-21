@@ -13,6 +13,7 @@ const ActorInfo = () => {
 	const {params: {actorId}} = useMatch(`${PEOPLE_INFO}/:actorId`);
 
 	useEffect(() => {
+		window.scrollTo(0, 0);
 		dispatch(fetchActorInfo(actorId));
 	}, [dispatch, actorId]);
 

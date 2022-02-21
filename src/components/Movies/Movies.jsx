@@ -10,6 +10,7 @@ const Movies = () => {
 		isFull = useSelector(state => state.movies.isFull);
 
 	useEffect(() => {
+		window.scrollTo(0, 0);
 		if(!isFull) {
 			dispatch(fetchMovies());
 		}

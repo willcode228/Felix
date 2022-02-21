@@ -1,0 +1,22 @@
+@import '../../styles/variables';
+
+.errorPage{
+  min-height: calc(100vh - 70px);
+  padding-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  svg{
+    height: 50vh;
+    margin-bottom: 10px;
+  }
+
+  h2{
+    text-align: center;
+    color: $white;
+    &::first-letter{
+      color: $orange;
+    }
+  }
+}

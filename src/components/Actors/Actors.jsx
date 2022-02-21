@@ -10,6 +10,7 @@ const Actors = () => {
 	const {isFull, results, page, total_pages} = useSelector(state => state.actors);
 
 	useEffect(() => {
+		window.scrollTo(0, 0);
 		if (!isFull) {
 			dispatch(fetchActors());
 		}

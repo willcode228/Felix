@@ -1,10 +1,6 @@
-import {
-	SET_SHOW_INFO_LOADING,
-	SET_SHOW_INFO_SUCCESS,
-} from './actions';
+import { SET_SHOW_INFO_SUCCESS } from './actions';
 
 const initialState = {
-	loading: false,
 	details: {
 		poster_path: '',
 		backdrop_path: '',
@@ -32,11 +28,6 @@ const initialState = {
 
 const showInfoReducer = (state=initialState, action) => {
 	switch (action.type) {
-		case SET_SHOW_INFO_LOADING:
-			return {
-				...state,
-				loading: action.payload
-			}
 		case SET_SHOW_INFO_SUCCESS:
 			return {
 				...state,

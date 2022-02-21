@@ -22,6 +22,10 @@
 	width: 150px;
 	z-index: 5;
 	transition: $fst-transition;
+
+	@media (max-width: 768px) {
+	  width: 50px;
+	}
   }
   &::after{
 	right: 0;

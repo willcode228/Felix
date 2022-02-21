@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import styles from './Catalogue.module.scss';
 import { NavLink } from 'react-router-dom';
 import { ReactComponent as ArrowIcon } from '../../assets/icons/right-arrow.svg';
+import { DISCOVER, TYPE_MOVIE } from '../../routes/consts';
 
-const Catalogue = ({children, linkText, title, path, vertical}) => {
+const Catalogue = ({children, linkText, title, path=`${DISCOVER}/${TYPE_MOVIE}`, vertical}) => {
 	const [scrollRight, setScrollRight] = useState(false);
 	const [scrollLeft, setScrollLeft] = useState(true);
 
@@ -28,7 +29,7 @@ const Catalogue = ({children, linkText, title, path, vertical}) => {
 				<h2 className={styles.top__title}>{title}</h2>
 
 				{linkText &&
-					<NavLink to="/" className={styles.top__link}>
+					<NavLink to={path} className={styles.top__link}>
 						{linkText} <ArrowIcon/>
 					</NavLink>
 				}

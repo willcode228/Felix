@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMovieInfo } from '../../store/MovieInfo/actions';
 import { useMatch } from 'react-router';
-import { MOVIE_INFO } from '../../routes/consts';
+import { MOVIE_INFO, PEOPLE } from '../../routes/consts';
 import Catalogue from '../../common/Catalogue/Catalogue';
 import ActorCard from '../../common/ActorCard/ActorCard';
 import styles from './MovieInfo.module.scss';
@@ -26,7 +26,7 @@ const MovieInfo = () => {
 			<BillInfoTop details={details}/>
 
 			<div className={styles.wrapper}>
-				<Catalogue title="Top Billed Cast">
+				<Catalogue title="Top Billed Cast" path={PEOPLE} linkText='All actors'>
 					{credits.cast.map(actor => <ActorCard key={actor.id} actor={actor}/>)}
 				</Catalogue>
 

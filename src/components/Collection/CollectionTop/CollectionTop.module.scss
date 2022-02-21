@@ -16,6 +16,10 @@
 
     background: rgba($app-bg, .8);
     color: $white;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   &__title{font-size: 30px;}
@@ -26,6 +30,9 @@
   &__info{
     margin-left: 50px;
     flex-grow: 1;
+    @media (max-width: 768px) {
+      margin-left: 0;
+    }
   }
 
   &__rate{

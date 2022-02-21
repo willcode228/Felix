@@ -32,6 +32,9 @@
   width: 450px;
   margin-bottom: 30px;
   line-height: 35px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 .link{

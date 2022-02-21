@@ -1,22 +1,23 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import { FETCH_SHOW_INFO } from './actions';
-import { setShowInfoLoading, setShowInfoSuccess } from './actions';
+import { setShowInfoSuccess } from './actions';
 import { setErrorPage } from '../ErrorPage/actions';
 import { showInfoApi } from '../../api/showInfoApi';
+import { setLoading } from '../Loading/actions';
 
 function* fetchShowInfoWorker(showId) {
 	try {
 		yield put(setErrorPage());
-		yield put(setShowInfoLoading(true));
+		yield put(setLoading(true));
 
 		const actorInfo = yield call(showInfoApi.getShowAllInfo, showId.payload);
 		yield put(setShowInfoSuccess(actorInfo));
 
-		yield put(setShowInfoLoading(false));
+		yield put(setLoading(false));
 
 	} catch (error) {
 		yield put(setErrorPage(error));
-		yield put(setShowInfoLoading(false));
+		yield put(setLoading(false));
 	}
 }
 

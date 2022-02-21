@@ -9,9 +9,9 @@ import movieInfoReducer from './MovieInfo/reducer';
 import collectionReducer from './Collection/reducer';
 import errorPageReducer from './ErrorPage/reducer';
 import showInfoReducer from './ShowInfo/reducer';
-
-
-const saga = createSagaMiddleware();
+import searchReducer from './Search/reducer';
+import discoverReducer from './Discover/reducer';
+import loadingReducer from './Loading/reducer';
 
 const reducers = combineReducers({
 	errorPage: errorPageReducer,
@@ -21,9 +21,13 @@ const reducers = combineReducers({
 	actorInfo: actorInfoReducer,
 	movieInfo: movieInfoReducer,
 	collection: collectionReducer,
-	showInfo: showInfoReducer
+	showInfo: showInfoReducer,
+	search: searchReducer,
+	discover: discoverReducer,
+	loading: loadingReducer
 });
 
+const saga = createSagaMiddleware();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducers, composeEnhancers(applyMiddleware(saga)));
 

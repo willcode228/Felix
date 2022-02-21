@@ -1,15 +1,10 @@
-import {
-	SET_MOVIES_FULL,
-	SET_MOVIES_LOADING,
-	SET_MOVIES_SUCCESS,
-} from './actions';
+import { SET_MOVIES_FULL, SET_MOVIES_SUCCESS, } from './actions';
 
 const initialState = {
 	popular: {},
 	playing: {},
 	topRated: {},
 	upcoming: {},
-	loading: false,
 	isFull: false
 }
 
@@ -19,11 +14,6 @@ const moviesReducer = (state=initialState, action) => {
 			return {
 				...state,
 				...action.payload
-			}
-		case SET_MOVIES_LOADING:
-			return {
-				...state,
-				loading: action.payload
 			}
 		case SET_MOVIES_FULL:
 			return {

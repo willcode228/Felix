@@ -1,8 +1,7 @@
-import { SET_ACTORS_FULL, SET_ACTORS_LOADING, SET_ACTORS_SUCCESS } from './actions';
+import { SET_ACTORS_FULL, SET_ACTORS_SUCCESS } from './actions';
 
 const initialState = {
 	results: [],
-	loading: false,
 	isFull: false,
 	page: 0
 };
@@ -13,11 +12,6 @@ const actorsReducer = (state=initialState, action) => {
 			return {
 				...state,
 				isFull: action.payload
-			}
-		case SET_ACTORS_LOADING:
-			return {
-				...state,
-				loading: action.payload
 			}
 		case SET_ACTORS_SUCCESS:
 			return {

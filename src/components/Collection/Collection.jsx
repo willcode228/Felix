@@ -14,6 +14,7 @@ const Collection = () => {
 	const {params: {collectionId}} = useMatch(`${COLLECTION}/:collectionId`);
 
 	useEffect(() => {
+		window.scrollTo(0, 0);
 		dispatch(fetchCollection(collectionId));
 	}, [dispatch, collectionId]);
 

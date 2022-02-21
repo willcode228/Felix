@@ -11,6 +11,9 @@
   justify-content: space-between;
   color: $white;
   background: rgba($app-bg, .8);
+  @media (max-width: 768px) {
+	flex-direction: column;
+  }
 
   &__overview{
 	margin-bottom: 20px;
@@ -40,6 +43,9 @@
 	display: flex;
 	align-items: center;
 	gap: 20px;
+	@media (max-width: 768px) {
+	  display: none;
+	}
 	&_date,
 	&_genres{
 	  @include glassBorder(right, 20px);
@@ -67,5 +73,11 @@
   &__info{
 	margin-left: 50px;
 	flex-grow: 1;
+	@media (max-width: 768px) {
+	  margin-left: 0px;
+	  h2{
+		margin: 20px 0px;
+	  }
+	}
   }
 }

@@ -18,5 +18,10 @@
   &__logo{
     margin-right: 150px;
     text-transform: uppercase;
+
+    @media (max-width: 768px) {
+      display: none;
+      margin-right: 10px;
+    }
   }
 }

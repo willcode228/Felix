@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useMatch } from 'react-router';
-import { SHOW_INFO } from '../../routes/consts';
+import { DISCOVER, PEOPLE, SHOW_INFO, TYPE_TV } from '../../routes/consts';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchShowInfo } from '../../store/ShowInfo/actions';
 import Catalogue from '../../common/Catalogue/Catalogue';
@@ -17,8 +17,9 @@ const ShowInfo = () => {
 	const {params: {showId}} = useMatch(`${SHOW_INFO}/:showId`);
 
 	useEffect(() => {
+		window.scrollTo(0, 0);
 		dispatch(fetchShowInfo(showId));
-	}, [dispatch, fetchShowInfo, showId]);
+	}, [dispatch, showId]);
 
 	return (
 		<div className={styles.showInfo}>
@@ -26,7 +27,7 @@ const ShowInfo = () => {
 			<BillInfoTop details={details}/>
 
 			<div className={styles.wrapper}>
-				<Catalogue title='Top Billed Cast'>
+				<Catalogue title='Top Billed Cast' path={PEOPLE} linkText='All actors'>
 					{credits.cast.map(actor => <ActorCard actor={actor}/>)}
 				</Catalogue>
 
@@ -34,7 +35,12 @@ const ShowInfo = () => {
 
 				<MovieInfoCollection collection={details.belongs_to_collection}/>
 
-				<BillCatalogue title='Recommendations' catalogue={recommendations.results}/>
+				<BillCatalogue
+					title='Recommendations'
+					catalogue={recommendations.results}
+					path={`${DISCOVER}/${TYPE_TV}`}
+					linkText='All shows'
+				/>
 			</div>
 		</div>
 	);

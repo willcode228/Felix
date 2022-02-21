@@ -1,7 +1,7 @@
 import React from 'react';
 import Navigation from './Navigation/Navigation';
 import styles from './Navbar.module.scss';
-import Meta from './Meta/Meta';
+import SearchForm from './SearchForm/SearchForm';
 
 const Navbar = () => {
 	return (
@@ -9,7 +9,7 @@ const Navbar = () => {
 			<h1 className={styles.nav__logo}>Felix</h1>
 
 			<Navigation />
-			<Meta />
+			<SearchForm />
 		</nav>
 	);
 };
